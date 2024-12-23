@@ -1,8 +1,8 @@
-
+import HomePage from "@/Pages/HomePage"
 export default function Home() {
   return (
     <div>
-      <h2 className="text-2xl font-bold">Working</h2>
+      <HomePage/>
     </div>
   );
 }
