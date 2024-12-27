@@ -11,13 +11,13 @@ const Navbar: React.FC = () => {
   
   const navLinks = [
     { id: "home", title: "Home" },
-    { id: "product", title: "Products" },
+    { id: "products", title: "Products" },
     { id: "about", title: "About" },
     { id: "contact", title: "Contact us" },
   ];
   return (
     <nav
-      className={`navbar px-10 fixed top-0 left-0 z-50 transition-all duration-300 `}
+      className={`navbar px-10 top-0 left-0 z-50 transition-all duration-300 `}
     >
       <div className="navbar-start">
         <Link href="/" className="flex-shrink-0">
@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
       </div>
 
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 font-Merri">
+        <ul className="menu menu-horizontal px-1">
           {navLinks.map((link) => (
             <li key={link.id}>
               <Link
