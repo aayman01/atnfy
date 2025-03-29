@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
   const navLinks = [
     { id: "home", title: "Home" },
     { id: "products", title: "Products" },
-    { id: "about", title: "About" },
+    { id: "cart", title: "Cart" },
     { id: "contact", title: "Contact us" },
   ];
   return (

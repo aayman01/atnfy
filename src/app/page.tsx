@@ -1,7 +1,9 @@
-import HomePage from "@/Pages/HomePage"
+import HomePage from "@/Pages/HomePage";
+
+// import "./globals.css"
 export default function Home() {
   return (
-    <div>
+    <div className="font-garamond">
       <HomePage/>
     </div>
   );
