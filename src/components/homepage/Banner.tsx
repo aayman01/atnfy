@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -6,20 +6,36 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./style.css";
+import ban1 from "../../assets/banner1.jpg";
+
 
 import { EffectFade, Navigation, Pagination, Autoplay } from "swiper/modules";
-import Slide from "@/components/Slide";
 
+import Image from "next/image";
+
+const bannerImages = [
+  {
+    id: 1,
+    img: ban1,
+  },
+  {
+    id: 2,
+    img: ban1,
+  },
+  {
+    id: 3,
+    img: ban1,
+  },
+];
 
 const Banner: React.FC = () => {
- 
   return (
     <>
       <Swiper
         spaceBetween={30}
         effect={"fade"}
         autoplay={{
-          delay: 5000,
+          delay: 6000,
           disableOnInteraction: false,
         }}
         loop={true}
@@ -29,30 +45,24 @@ const Banner: React.FC = () => {
         modules={[EffectFade, Navigation, Pagination, Autoplay]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <Slide
-            image={"/assets/male-modelwebp.webp"}
-            title={"Winter Collection"}
-            model={"Winter Jacket"}
-            price={"1000"}
-          ></Slide>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Slide
-            image={"/assets/male-modelwebp.webp"}
-            title={"Winter Collection"}
-            model={"Winter Jacket"}
-            price={"1200"}
-          ></Slide>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Slide
-            image={"/assets/male-modelwebp.webp"}
-            title={"Winter Collection"}
-            model={"Winter Jacket"}
-            price={"1300"}
-          ></Slide>
-        </SwiperSlide>
+        {bannerImages.map((slide, idx) => (
+          <SwiperSlide key={idx}>
+            <div className="relative w-full h-[10rem] md:h-[18rem] lg:h-[25rem] bg-gray-100 flex justify-center items-center overflow-hidden">
+              <div
+                className="relative"
+                style={{ width: "1000px" }}
+              >
+                <Image
+                  src={slide.img}
+                  width={1000}
+                  height={1000}
+                  alt="banner"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );

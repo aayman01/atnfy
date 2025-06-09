@@ -8,8 +8,8 @@ const Navbar: React.FC = () => {
 
   const navLinks = [
     { id: "shop", title: "Shop" },
-    { id: "about", title: "About" },
-    { id: "wholesale", title: "Wholesale" },
+    { id: "men", title: "Men's" },
+    { id: "women", title: "Women's" },
   ];
 
   const rightNavLinks = [
@@ -21,7 +21,6 @@ const Navbar: React.FC = () => {
   return (
     <nav className="w-full px-4 py-3 bg-white border-b">
       <div className="flex items-center justify-between">
-       
         {/* mobile menu */}
         <MobileSidebar />
 
@@ -31,7 +30,7 @@ const Navbar: React.FC = () => {
             <Link
               key={link.id}
               href={`/${link.id}`}
-              className="text-base hover:text-gray-500 transition-colors"
+              className="lg:text-lg text-base hover:text-gray-500 transition-colors"
             >
               {link.title}
             </Link>
@@ -39,7 +38,7 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Center: Logo */}
-        <Link href="/" className="text-2xl font-bold tracking-wider">
+        <Link href="/" className="text-4xl font-bold tracking-wider">
           ATNFY
         </Link>
 
