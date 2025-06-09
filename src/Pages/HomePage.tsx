@@ -4,11 +4,10 @@ import Navbar from "@/components/homepage/NavBar";
 
 const HomePage = () => {
     return (
-      <div className="container mx-auto"> 
+      <div className="max-w-[1440px] mx-auto">
         <Navbar />
-        {/* <Test/> */}
-        <Banner/>
-        <Footer/>
+        <Banner />
+        <Footer />
       </div>
     );
 };
