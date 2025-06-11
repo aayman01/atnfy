@@ -6,7 +6,7 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./style.css";
-import ban1 from "../../assets/banner1.jpg";
+import ban1 from "../../../assets/banner1.jpg";
 
 
 import { EffectFade, Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -47,7 +47,7 @@ const Banner: React.FC = () => {
       >
         {bannerImages.map((slide, idx) => (
           <SwiperSlide key={idx}>
-            <div className="relative w-full h-[10rem] md:h-[18rem] lg:h-[25rem] bg-gray-100 flex justify-center items-center overflow-hidden">
+            {/* <div className="relative w-full h-[10rem] md:h-[18rem] lg:h-[25rem] bg-gray-100 flex justify-center items-center overflow-hidden">
               <div
                 className="relative"
                 style={{ width: "1000px" }}
@@ -60,6 +60,15 @@ const Banner: React.FC = () => {
                   className="object-cover"
                 />
               </div>
+            </div> */}
+            <div className="flex items-center justify-center">
+              <Image
+                src={slide.img}
+                width={1000}
+                height={1000}
+                alt="banner"
+                className="object-cover"
+              />
             </div>
           </SwiperSlide>
         ))}

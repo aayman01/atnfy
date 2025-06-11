@@ -3,9 +3,11 @@ import Link from "next/link";
 import React from "react";
 import { Search, ShoppingBag } from "lucide-react";
 import MobileSidebar from "./MobileSidebar";
+import { usePathname } from "next/navigation";
 
 const Navbar: React.FC = () => {
-
+  // const router = useRouter();
+  const pathname = usePathname();
   const navLinks = [
     { id: "shop", title: "Shop" },
     { id: "men", title: "Men's" },
@@ -19,7 +21,7 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className="w-full px-4 py-3 bg-white border-b">
+    <nav className="max-w-[1440px] mx-auto px-4 py-3 bg-white">
       <div className="flex items-center justify-between">
         {/* mobile menu */}
         <MobileSidebar />
@@ -30,7 +32,9 @@ const Navbar: React.FC = () => {
             <Link
               key={link.id}
               href={`/${link.id}`}
-              className="lg:text-lg text-base hover:text-gray-500 transition-colors"
+              className={`${
+                pathname === `/${link.id}` ? "underline" : ""
+              } lg:text-lg text-base font-medium hover:underline transition-colors`}
             >
               {link.title}
             </Link>
@@ -43,12 +47,12 @@ const Navbar: React.FC = () => {
         </Link>
 
         {/* Right Navigation */}
-        <div className="hidden lg:flex space-x-6">
+        <div className="hidden lg:flex space-x-6 ">
           {rightNavLinks.map((link) => (
             <Link
               key={link.id}
               href={link.id}
-              className="lg:text-lg text-base hover:text-gray-500 transition-colors"
+              className="lg:text-lg text-base hover:underline transition-colors"
             >
               {link.title}
             </Link>
